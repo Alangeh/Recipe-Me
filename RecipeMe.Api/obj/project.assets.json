@@ -75,6 +75,16 @@
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
         ]
+      },
+      "RecipeBook.ServiceLibrary/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/RecipeBook.ServiceLibrary.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/RecipeBook.ServiceLibrary.dll": {}
+        }
       }
     }
   },
@@ -185,10 +195,16 @@
         "swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512",
         "swashbuckle.aspnetcore.swaggerui.nuspec"
       ]
+    },
+    "RecipeBook.ServiceLibrary/1.0.0": {
+      "type": "project",
+      "path": "../RecipeBook.ServiceLibrary/RecipeBook.ServiceLibrary.csproj",
+      "msbuildProject": "../RecipeBook.ServiceLibrary/RecipeBook.ServiceLibrary.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
+      "RecipeBook.ServiceLibrary >= 1.0.0",
       "Swashbuckle.AspNetCore >= 5.6.3"
     ]
   },
@@ -218,7 +234,11 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\Lionel\\.Net Core 5\\GitHubRecipe.Me\\Recipe-Me\\RecipeBook.ServiceLibrary\\RecipeBook.ServiceLibrary.csproj": {
+              "projectPath": "D:\\Lionel\\.Net Core 5\\GitHubRecipe.Me\\Recipe-Me\\RecipeBook.ServiceLibrary\\RecipeBook.ServiceLibrary.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
