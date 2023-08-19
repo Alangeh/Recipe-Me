@@ -12,13 +12,35 @@ namespace RecipeMe.Api.Controllers
     [ApiController]
     public class RecipeController : ControllerBase
     {
-        [HttpGet]
-        public IActionResult AddNewRecipe([FromQuery]RecipeEntity recipeEntity)
+        [HttpGet("{recipeId}")]
+        public async Task<IActionResult> GetOnceAsync([FromRoute]Guid recipeId)
         {
-            var businessLogic = new Recipe();
-            businessLogic.SaveRecipe(recipeEntity);
+            return Ok(recipeId);
+        }
+
+
+        [HttpGet] // add recipe
+        public async Task<IActionResult> GetListAsync([FromQuery]int pageSize, [FromQuery] int pageNumber)
+        {
             return Ok();
         }
-        
+
+        [HttpPost]
+        public async Task<IActionResult> PostAsync([FromBody] RecipeEntity recipe)
+        {
+            return Ok(recipe);
+        }
+
+        [HttpPut]
+        public async Task<IActionResult> PutAsync([FromBody] RecipeEntity recipe)
+        {
+            return Ok(recipe);
+        }
+
+        [HttpDelete("{recipeId}")]
+        public async Task<IActionResult> DeleteAsync(Guid recipeId)
+        {
+            return Ok(recipeId);
+        }
     }
 }
